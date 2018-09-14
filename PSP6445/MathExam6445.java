@@ -22,11 +22,13 @@ public class MathExam6445 {
 			work();
 		}
 	}
+
 	/**
 	 * 检查输入的参数是否合法
+	 * 
 	 * @param strN：题数
 	 * @param strGrade：年级
-	 * @return	合法返回true，否则返回false
+	 * @return 合法返回true，否则返回false
 	 */
 	public static boolean check(String strN, String strGrade) {
 		// 若题数不为数字
@@ -46,9 +48,11 @@ public class MathExam6445 {
 			if (n > 100) {
 				System.out.println("输入的题数过大，体谅下小学生哦");
 				return false;
+			} else if (n == 0) {
+				System.out.println("输入的题数为零，那我还要不要出题呀");
 			}
 		}
-		
+
 		if (!strGrade.matches("[1-2]")) {
 			System.out.println("年级只能是 1 或者 2 哦");
 			return false;
@@ -57,6 +61,7 @@ public class MathExam6445 {
 		}
 		return true;
 	}
+
 	/**
 	 * 出题和给出答案至文件
 	 */
@@ -103,8 +108,8 @@ public class MathExam6445 {
 					i--;
 					continue;
 				}
-				str += "(" + i + ") " + num1 + " * " + num2 + "\r\n";
-				result += "(" + i + ") " + num1 + " * " + num2 + " = " + (num1 * num2) + "\r\n";
+				str += "(" + i + ") " + num1 + " × " + num2 + "\r\n";
+				result += "(" + i + ") " + num1 + " × " + num2 + " = " + (num1 * num2) + "\r\n";
 			} else {
 				num1 = rand.nextInt(11);
 				num2 = rand.nextInt(11);
@@ -113,12 +118,12 @@ public class MathExam6445 {
 					i--;
 					continue;
 				}
-				str += "(" + i + ") " + num1 + " / " + num2 + "\r\n";
+				str += "(" + i + ") " + num1 + " ÷ " + num2 + "\r\n";
 				if (num1 % num2 != 0) {
-					result += "(" + i + ") " + num1 + " / " + num2 + " = " + (num1 / num2) + "..." + (num1 % num2)
+					result += "(" + i + ") " + num1 + " ÷ " + num2 + " = " + (num1 / num2) + "..." + (num1 % num2)
 							+ "\r\n";
 				} else {
-					result += "(" + i + ") " + num1 + " / " + num2 + " = " + (num1 / num2) + "\r\n";
+					result += "(" + i + ") " + num1 + " ÷ " + num2 + " = " + (num1 / num2) + "\r\n";
 				}
 			}
 		}
